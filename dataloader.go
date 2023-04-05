@@ -1,4 +1,4 @@
-package csvloader
+package dataloader
 
 type Table struct {
 	header TableHeader
