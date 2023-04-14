@@ -62,7 +62,7 @@ func (loader *RLoader) WithDefault(defaultVal string) *RLoader {
 
 func (loader *RLoader) Load(label string) string {
 	colIdx := loader.header.getLabel(label)
-	if colIdx == -1 {
+	if colIdx == -1 || colIdx >= len(loader.data) {
 		return loader.defaultVal
 	}
 	return loader.data[colIdx]
